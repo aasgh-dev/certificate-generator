@@ -15,18 +15,13 @@ import com.spire.presentation.*;
 
 import java.awt.Color;
 import java.util.Properties;
-//import java.util.Properties;
 
 import java.io.File;
-//import jakarta.mail.*;
 import jakarta.mail.internet.*;
 
-//import java.io.File;
-//import java.util.Properties;
-//import java.io.File;
+
 import org.apache.poi.sl.usermodel.Insets2D;
 import org.apache.poi.sl.usermodel.TextParagraph.TextAlign;
-//import org.apache.poi.sl.usermodel.VerticalAlignment;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
@@ -93,7 +88,7 @@ public class ReadExcelFileToList {
 	}
 
 	public static void main(String args[]) {
-		List<person> names = readExalData("C:\\Users\\ba664\\OneDrive\\Documents\\table.xlsx");
+		List<person> names = readExalData("C:\\Users\\User\\OneDrive\\Documents\\table.xlsx");
 		for (person p : names) {
 			if (!(p.getName().equals("Job ID"))) {
 				System.out.println(p.getName() + p.getGmail());
@@ -109,10 +104,10 @@ public class ReadExcelFileToList {
 			Presentation ppt = new Presentation();
 
 			// Load a PowerPoint presentation
-			ppt.loadFromFile("C:\\Users\\ba664\\OneDrive\\Documents\\output.pptx");
+			ppt.loadFromFile("C:\\Users\\User\\OneDrive\\Documents\\output.pptx");
 
 			// Save the whole PowerPoint to PDF
-			ppt.saveToFile("C:\\Users\\ba664\\OneDrive\\Documents\\شهادة_حضور.pdf", FileFormat.PDF);
+			ppt.saveToFile("C:\\Users\\User\\OneDrive\\Documents\\شهادة_حضور.pdf", FileFormat.PDF);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -120,14 +115,13 @@ public class ReadExcelFileToList {
 
 	public static void sendMessage(String email) {
 		converPPtx();
-		final String username = "aasgh.devolper+certificate@gmail.com"; // بريدك
-		final String password = "iuqi jucq iwek rupe"; // كلمة مرور التطبيق (App Password)
+		final String username = "your email +certificate@gmail.com"; // بريدك
+		final String password = "write this on youtube to get inforimation=> *************how to generate gmail app password************"; // كلمة مرور التطبيق (App Password)
 
 		String toEmail = email; // المستقبل
 		String subject = "شهادة حضور دورة";
 		String messageText = "";
-		String filePath = "C:\\Users\\ba664\\OneDrive\\Documents\\شهادة_حضور.pdf";
-		//String filePath = "C:\\Users\\ba664\\OneDrive\\Documents\\output.pptx";
+		String filePath = "C:\\Users\\User\\OneDrive\\Documents\\شهادة_حضور.pdf";
 
 		// إعدادات SMTP
 		Properties props = new Properties();
@@ -210,11 +204,11 @@ public class ReadExcelFileToList {
 	public static void readPowerPoint(String name, String gmail) {
 		try {
 			XMLSlideShow ppt = new XMLSlideShow(
-					new FileInputStream("C:\\Users\\ba664\\Downloads\\Telegram Desktop\\شهادة ورشة.pptx"));
+					new FileInputStream("C:\\Users\\User\\Downloads\\Telegram Desktop\\شهادة ورشة.pptx"));
 			searchAndReplacePowerPoint(ppt, name, gmail);
 
 			System.out.println(" العملية تمت بنجاح");
-			FileOutputStream out = new FileOutputStream("C:\\Users\\ba664\\OneDrive\\Documents\\output.pptx");
+			FileOutputStream out = new FileOutputStream("C:\\Users\\User\\OneDrive\\Documents\\output.pptx");
 			ppt.write(out);
 			out.close();
 			sendMessage(gmail);
@@ -228,3 +222,4 @@ public class ReadExcelFileToList {
 		}
 	}
 }
+
