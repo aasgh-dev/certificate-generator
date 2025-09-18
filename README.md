@@ -25,5 +25,4 @@ It automates the process of generating personalized certificates and sending the
 
 ---
 
-## 📂 Folder Structure
 
